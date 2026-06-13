@@ -1,0 +1,52 @@
+/* import tailwind's base styles */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* css variables for colors - these change based on light/dark mode */
+@layer base {
+  :root {
+    /* light mode colors */
+    --background: 0 0% 100%;
+    --foreground: 0 0% 3.9%;
+  }
+
+  .dark {
+    /* dark mode colors */
+    --background: 0 0% 3.9%;
+    --foreground: 0 0% 98%;
+  }
+}
+
+/* base styles for the entire app */
+@layer base {
+  * {
+    @apply border-gray-200 dark:border-gray-800;
+  }
+  
+  body {
+    @apply bg-white dark:bg-gray-900 text-gray-900 dark:text-gray-100;
+  }
+}
+
+/* custom utility classes for reusable styles */
+@layer utilities {
+  /* button styles */
+  .btn-primary {
+    @apply px-6 py-2 bg-gray-900 dark:bg-white text-white dark:text-gray-900 rounded-lg hover:bg-gray-700 dark:hover:bg-gray-200 transition-colors;
+  }
+  
+  .btn-secondary {
+    @apply px-6 py-2 bg-white dark:bg-gray-800 text-gray-900 dark:text-white border border-gray-300 dark:border-gray-700 rounded-lg hover:bg-gray-50 dark:hover:bg-gray-700 transition-colors;
+  }
+  
+  /* card styles */
+  .card {
+    @apply bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg p-6;
+  }
+  
+  /* input styles */
+  .input {
+    @apply w-full px-4 py-2 border border-gray-300 dark:border-gray-700 rounded-lg bg-white dark:bg-gray-800 text-gray-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-gray-500;
+  }
+}
